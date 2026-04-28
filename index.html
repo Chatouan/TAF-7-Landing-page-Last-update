@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CoinCarrière × Immobilier — التوظيف الذكي في العقار</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- META PIXEL — Remplace YOUR_PIXEL_ID -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<style>
+:root{
+  --navy:    #07152b;
+  --navy2:   #0d2244;
+  --navy3:   #122d5a;
+  --sky:     #1a8fe3;
+  --sky2:    #3da9f5;
+  --sky-glow:rgba(26,143,227,0.18);
+  --white:   #ffffff;
+  --offwhite:#e8f0f8;
+  --muted:   #7ca4c8;
+  --border:  rgba(26,143,227,0.18);
+  --ff:      'Sora',sans-serif;
+  --ffa:     'Noto Kufi Arabic',sans-serif;
+  --r:       14px;
+  --tr:      0.28s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.65}
+
+/* ─── UTILS ─── */
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky2);background:rgba(61,169,245,.1);border:1px solid rgba(61,169,245,.25);padding:5px 14px;border-radius:100px;margin-bottom:20px}
+.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--sky2);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.sec{padding:88px 0}
+.sec-sm{padding:56px 0}
+.ar{font-family:var(--ffa);direction:rtl;text-align:right}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff);font-weight:700;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:var(--tr)}
+.btn-sky{background:var(--sky);color:#fff;font-size:.98rem;padding:15px 32px}
+.btn-sky:hover{background:var(--sky2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(26,143,227,.35)}
+.btn-ghost{background:transparent;color:var(--white);font-size:.95rem;padding:14px 28px;border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--sky);color:var(--sky2)}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(7,21,43,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:14px 0}
+.nav-i{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:36px;height:36px;background:var(--sky);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff}
+.logo-name{font-weight:700;font-size:1.05rem;color:var(--white)}
+.logo-name span{color:var(--sky2)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.nav-note{font-size:.78rem;color:var(--muted)}
+@media(max-width:560px){.nav-note{display:none}}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 55% at 65% 35%,rgba(26,143,227,.14) 0%,transparent 65%),
+  radial-gradient(ellipse 40% 40% at 15% 75%,rgba(26,143,227,.07) 0%,transparent 55%),
+  linear-gradient(180deg,var(--navy) 0%,#060f22 100%)}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(26,143,227,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,143,227,.06) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 85% 80% at center,black 20%,transparent 75%)}
+.hero-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+@media(max-width:840px){.hero-wrap{grid-template-columns:1fr;gap:40px}}
+
+/* Left */
+.hero-hook{margin-bottom:20px}
+.hook-ar{font-family:var(--ffa);direction:rtl;font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;color:var(--white);line-height:1.3;margin-bottom:12px}
+.hook-ar em{font-style:normal;color:var(--sky2)}
+.hook-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--sky),transparent);border-radius:2px;margin:16px auto 16px 0}
+h1.hero-title{font-size:clamp(1.7rem,3.8vw,2.9rem);font-weight:800;line-height:1.12;color:var(--white);margin-bottom:20px}
+h1.hero-title em{font-style:normal;color:var(--sky2)}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;margin-bottom:32px;max-width:500px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.hero-proof{display:flex;align-items:center;gap:12px}
+.proof-avs{display:flex}
+.proof-avs span{width:34px;height:34px;border-radius:50%;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;margin-left:-10px}
+.proof-avs span:first-child{margin-left:0}
+.av1{background:#1a8fe3;color:#fff}
+.av2{background:#0d2244;color:#3da9f5;border-color:var(--sky)!important}
+.av3{background:#1e5f9e;color:#fff}
+.av4{background:#0a3d70;color:#3da9f5}
+.proof-txt{font-size:.8rem;color:var(--muted);line-height:1.35}
+.proof-txt strong{color:var(--white)}
+
+/* Right — pain card */
+.hero-right{position:relative}
+.pain-card{background:rgba(13,34,68,.7);border:1px solid var(--border);border-radius:20px;padding:28px;backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--sky2),transparent)}
+.pc-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky2);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.pc-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.pain-items{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.pain-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid transparent;transition:var(--tr)}
+.pain-item:hover{border-color:rgba(26,143,227,.2);background:rgba(26,143,227,.05)}
+.pain-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.pi-red{background:rgba(239,68,68,.12);color:#ef4444}
+.pi-ora{background:rgba(249,115,22,.12);color:#f97316}
+.pi-yel{background:rgba(234,179,8,.12);color:#eab308}
+.pain-txt .pt-title{font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:2px}
+.pain-txt .pt-desc{font-size:.76rem;color:var(--muted)}
+.pc-verdict{background:rgba(26,143,227,.08);border:1px solid rgba(26,143,227,.2);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px}
+.pc-verdict-icon{font-size:1.4rem}
+.pc-verdict-txt{font-family:var(--ffa);direction:rtl;font-size:.88rem;color:var(--offwhite);line-height:1.5;font-weight:600}
+.hero-float{position:absolute;top:-14px;right:-14px;background:rgba(7,21,43,.95);border:1px solid var(--border);border-radius:12px;padding:10px 15px;font-size:.76rem;font-weight:600;color:var(--white);display:flex;align-items:center;gap:7px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+
+/* ─── SECTION 2 — Le problème ─── */
+#probleme{background:linear-gradient(180deg,#060f22 0%,var(--navy) 100%)}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:820px){.prob-grid{grid-template-columns:1fr;gap:36px}}
+.prob-visual{border-radius:20px;background:rgba(13,34,68,.6);border:1px solid var(--border);padding:32px;position:relative}
+.prob-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#ef4444,transparent)}
+.prob-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.prob-row:last-child{border-bottom:none}
+.prob-num{font-family:var(--ffa);font-size:2rem;font-weight:800;color:rgba(239,68,68,.4);line-height:1;min-width:60px;text-align:center}
+.prob-info .pi-t{font-size:.9rem;font-weight:600;color:var(--white)}
+.prob-info .pi-d{font-size:.78rem;color:var(--muted);margin-top:2px}
+h2.sec-title{font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;line-height:1.15;color:var(--white);margin-bottom:18px}
+h2.sec-title em{font-style:normal;color:var(--sky2)}
+.sec-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:480px}
+.reframe{margin-top:28px;background:rgba(26,143,227,.08);border-left:3px solid var(--sky);border-radius:0 12px 12px 0;padding:16px 20px}
+.reframe-ar{font-family:var(--ffa);direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--white);line-height:1.5}
+
+/* ─── SECTION 3 — AI Solution ─── */
+#solution{border-top:1px solid var(--border)}
+.sol-header{text-align:center;max-width:640px;margin:0 auto 56px}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+@media(max-width:820px){.sol-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sol-grid{grid-template-columns:1fr}}
+.sol-card{background:rgba(13,34,68,.6);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:var(--tr)}
+.sol-card:hover{border-color:var(--sky);transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,143,227,.12)}
+.sol-icon{width:48px;height:48px;border-radius:12px;background:rgba(26,143,227,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;transition:var(--tr)}
+.sol-card:hover .sol-icon{background:var(--sky);filter:none}
+.sol-title{font-size:.98rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.sol-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+.sol-ai-badge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;color:var(--sky2);background:rgba(26,143,227,.1);border:1px solid rgba(26,143,227,.2);padding:3px 10px;border-radius:100px;margin-top:10px}
+
+/* ─── SECTION 4 — Processus ─── */
+#processus{background:linear-gradient(180deg,var(--navy) 0%,#060f22 100%);border-top:1px solid var(--border)}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+@media(max-width:820px){.proc-steps{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:520px){.proc-steps{grid-template-columns:1fr}}
+.proc-line{position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,var(--sky),var(--sky2));z-index:0}
+@media(max-width:820px){.proc-line{display:none}}
+.proc-step{text-align:center;padding:0 12px;position:relative;z-index:1}
+.proc-circle{width:72px;height:72px;border-radius:50%;background:var(--navy2);border:1.5px solid var(--sky);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.6rem}
+.proc-step:last-child .proc-circle{border-color:var(--sky2);background:rgba(26,143,227,.1)}
+.proc-name{font-weight:700;font-size:.98rem;color:var(--white);margin-bottom:8px}
+.proc-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+/* ─── SECTION 5 — Preuve sociale ─── */
+#preuve{border-top:1px solid var(--border)}
+.logos-wrap{overflow:hidden;position:relative;margin:32px 0}
+.logos-wrap::before,.logos-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2}
+.logos-wrap::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.logos-wrap::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.logos-track{display:flex;gap:40px;animation:scroll 24s linear infinite;width:max-content}
+.logos-track:hover{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-chip{flex-shrink:0;padding:10px 22px;border:1px solid var(--border);border-radius:10px;background:rgba(13,34,68,.5);font-size:.88rem;color:var(--muted);white-space:nowrap;transition:var(--tr)}
+.logo-chip:hover{color:var(--white);border-color:var(--sky)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:48px 0}
+@media(max-width:820px){.stats-row{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.stats-row{grid-template-columns:1fr 1fr}}
+.stat-box{background:rgba(13,34,68,.6);border:1px solid var(--border);border-radius:var(--r);padding:28px 20px;text-align:center}
+.stat-n{font-family:var(--ffa);font-size:2.2rem;font-weight:800;color:var(--white);display:block;line-height:1}
+.stat-n em{font-style:normal;color:var(--sky2)}
+.stat-l{font-size:.78rem;color:var(--muted);margin-top:6px}
+.testi{background:rgba(13,34,68,.5);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:680px;margin:0 auto;position:relative}
+.testi::before{content:'"';position:absolute;top:-18px;left:28px;font-family:var(--ffa);font-size:4.5rem;color:var(--sky);line-height:1;opacity:.6}
+.testi-text{font-family:var(--ffa);direction:rtl;text-align:right;font-size:1rem;line-height:1.8;color:var(--offwhite);font-style:italic;margin-bottom:18px}
+.testi-auth{display:flex;align-items:center;gap:12px;justify-content:flex-end}
+.testi-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:.85rem;flex-shrink:0}
+.testi-info{text-align:right}
+.testi-name{font-weight:700;color:var(--white);font-size:.9rem}
+.testi-role{font-size:.76rem;color:var(--muted)}
+
+/* ─── CTA SECTION ─── */
+#cta{background:linear-gradient(135deg,var(--navy3) 0%,#060f22 100%);border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+#cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(26,143,227,.15) 0%,transparent 70%)}
+.cta-inner{position:relative;z-index:2}
+.cta-hook-ar{font-family:var(--ffa);direction:rtl;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--sky2);font-weight:700;margin-bottom:12px}
+.cta-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;line-height:1.12;color:var(--white);margin-bottom:16px}
+.cta-sub{font-size:1rem;color:var(--muted);max-width:460px;margin:0 auto 36px;line-height:1.7}
+.cta-btns{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:20px}
+.cta-note{font-size:.8rem;color:var(--muted)}
+.cta-note span{color:var(--sky2)}
+
+/* ─── FOOTER ─── */
+footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
+.foot-note{font-size:.78rem;color:var(--muted)}
+.foot-logo{font-weight:700;color:var(--white);font-size:1rem;margin-bottom:8px;display:block}
+.foot-logo span{color:var(--sky2)}
+
+/* ─── STICKY MOBILE ─── */
+.sticky-mob{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(7,21,43,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:12px 20px;display:none;align-items:center;justify-content:space-between;gap:12px}
+@media(max-width:640px){.sticky-mob{display:flex}}
+.sticky-txt strong{color:var(--white);font-size:.88rem;display:block}
+.sticky-txt span{font-size:.74rem;color:var(--muted)}
+@media(max-width:640px){#cta{padding-bottom:96px!important}}
+
+/* ─── ANIMATIONS ─── */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+.fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}.fi.d4{transition-delay:.4s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-i">
+    <a href="#" class="logo">
+      <div class="logo-mark">C</div>
+      <span class="logo-name">Coin<span>Carrière</span></span>
+    </a>
+    <div class="nav-r">
+      <span class="nav-note">منصة التوظيف الذكي في العقار</span>
+      <a href="https://coincarriere.com/register?type=company" target="_blank"
+         class="btn btn-sky" onclick="fbq('track','Lead')">
+        ابدأ مجاناً →
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-lines"></div>
+  <div class="container">
+    <div class="hero-wrap">
+
+      <!-- LEFT -->
+      <div>
+        <div class="tag"><span class="dot"></span> قطاع العقار · المغرب 2026</div>
+        <div class="hero-hook">
+          <div class="hook-ar">«التوظيف ديالك كيكلفك<br><em>أكثر مما تتخيل...»</em></div>
+          <div class="hook-divider"></div>
+        </div>
+        <h1 class="hero-title">
+          Recrutez vos agents immobiliers<br>
+          <em>sans perdre des semaines</em><br>
+          à trier des CVs.
+        </h1>
+        <p class="hero-sub">
+          السوق فيه فرص… ولكن طريقة التوظيف ديالك كتحرمك منها.<br>
+          ركّز غير على إغلاق الصفقات — وحنا نوفروا لك أفضل المرشحين المعتمدين.
+        </p>
+        <div class="hero-actions">
+          <a href="https://coincarriere.com/register?type=company" target="_blank"
+             class="btn btn-sky" onclick="fbq('track','Lead')">
+            اكتشف الحل المجاني →
+          </a>
+          <a href="#solution" class="btn btn-ghost">Voir comment ça marche</a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avs">
+            <span class="av1">KA</span>
+            <span class="av2">MR</span>
+            <span class="av3">SW</span>
+            <span class="av4">FH</span>
+          </div>
+          <div class="proof-txt"><strong>+451 responsables RH</strong><br>font confiance à CoinCarrière</div>
+        </div>
+      </div>
+
+      <!-- RIGHT — pain card -->
+      <div class="hero-right fi d2">
+        <div class="hero-float">🔴 فرز CVs يدوياً — وقت ضائع</div>
+        <div class="pain-card">
+          <div class="pc-label">الطريقة التقليدية — ما كتنجحش</div>
+          <div class="pain-items">
+            <div class="pain-item">
+              <div class="pain-icon pi-red">📋</div>
+              <div class="pain-txt">
+                <div class="pt-title">إعلانات بلا نتائج</div>
+                <div class="pt-desc">تنشر على Indeed, LinkedIn... وفي الآخر: نفس المشكل</div>
+              </div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-icon pi-ora">⏰</div>
+              <div class="pain-txt">
+                <div class="pt-title">ساعات في فرز السير</div>
+                <div class="pt-desc">200 CV للمنصب الواحد — كتقضي وقتك فالتوظيف عوض البيع</div>
+              </div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-icon pi-yel">❌</div>
+              <div class="pain-txt">
+                <div class="pt-title">مرشحون دون مستوى</div>
+                <div class="pt-desc">مقابلات... وفي الأخير المرشح ما كيصلحش للعقار</div>
+              </div>
+            </div>
+          </div>
+          <div class="pc-verdict">
+            <div class="pc-verdict-icon">🤖</div>
+            <div class="pc-verdict-txt">كاين حل ذكي — AI كيساعدك تختار أفضل المرشحين وتربح الوقت</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ LE PROBLÈME ══════ -->
+<section id="probleme" class="sec">
+  <div class="container">
+    <div class="prob-grid">
+      <!-- visual -->
+      <div class="prob-visual fi">
+        <div class="pc-label" style="margin-bottom:20px">الحقيقة بالأرقام</div>
+        <div class="prob-row">
+          <div class="prob-num">72%</div>
+          <div class="prob-info">
+            <div class="pi-t">شحال من وقت كيضيع مسؤول الموارد البشرية غير ففرز السير الذاتية</div>
+            <div class="pi-d">بدل التركيز على التوظيف الفعلي وإدارة الفريق</div>
+          </div>
+        </div>
+        <div class="prob-row">
+          <div class="prob-num">3+</div>
+          <div class="prob-info">
+            <div class="pi-t">أسابيع للمنصب الواحد</div>
+            <div class="pi-d">المتوسط في قطاع العقار بالطرق التقليدية</div>
+          </div>
+        </div>
+        <div class="prob-row">
+          <div class="prob-num">60%</div>
+          <div class="prob-info">
+            <div class="pi-t">من المرشحين لا يصلحون</div>
+            <div class="pi-d">لأن فرز السير لم يكن دقيقاً من البداية</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- text -->
+      <div>
+        <div class="tag"><span class="dot"></span> التشخيص</div>
+        <h2 class="sec-title">لمشكل ماشي السوق...<br><em>لمشكل هو الطريقة.</em></h2>
+        <p class="sec-sub">
+          قطاع العقار فالمغرب كيعرف نمو سريع حتى لـ2030 وكأس العالم — الطلب موجود. ولكن مسؤولي الموارد البشرية كيضيعو وقتهم ففرز السير الذاتية يدوياً بلا ما يكتاشفو الكفاءات الحقيقية.
+        </p>
+        <div class="reframe">
+          <div class="reframe-ar">
+            واش عمرك فكرت أن الحل ماشي فزيادة الخدمة...<br>
+            ولكن <strong style="color:var(--sky2)">فطريقة أذكى؟</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ AI SOLUTION ══════ -->
+<section id="solution" class="sec">
+  <div class="container">
+    <div class="sol-header fi">
+      <div class="tag"><span class="dot"></span> الحل الذكي</div>
+      <h2 class="sec-title" style="text-align:center">ودّع الفرز اليدوي… مرحباً بالفرز الذكي</h2>
+      <p style="color:var(--muted);font-size:1rem;line-height:1.7;text-align:center">
+        نتا ما مطلوبش تخدم أكثر — المطلوب تخدم بذكاء.<br>
+        المنصة كتحلل السير وكتعطيك غير اللي يصلح للعقار.
+      </p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card fi">
+        <div class="sol-icon">🤖</div>
+        <div class="sol-title">فرز ذكي بالـ AI</div>
+        <p class="sol-desc">فرز وتحليل أوتوماتيكي مع تقييم دقيق — باش تختار بسرعة اللي مناسب.</p>
+        <span class="sol-ai-badge">⚡ AI Powered</span>
+      </div>
+      <div class="sol-card fi d1">
+        <div class="sol-icon">🏢</div>
+        <div class="sol-title">تخصص العقار</div>
+        <p class="sol-desc">المنصة مبنية خصيصاً للقطاع — فلتر تجربة العقار، المبيعات، إدارة الملفات، الترخيص.</p>
+      </div>
+      <div class="sol-card fi d2">
+        <div class="sol-icon">📥</div>
+        <div class="sol-title">مرشحين مؤهلين فـ48 ساعة فقط</div>
+        <p class="sol-desc">استقبل مرشحين جاهزين للعمل خلال 48 ساعة من نشر الإعلان — مضمون.</p>
+      </div>
+      <div class="sol-card fi d1">
+        <div class="sol-icon">👥</div>
+        <div class="sol-title">قرار جماعي</div>
+        <p class="sol-desc">كلشي واضح ومشترك مع الفريق — بلا صداع الإيميل.</p>
+      </div>
+      <div class="sol-card fi d2">
+        <div class="sol-icon">📅</div>
+        <div class="sol-title">مقابلات مدمجة</div>
+        <p class="sol-desc">حدد المواعيد مباشرة من المنصة — التقويم يتزامن تلقائياً.</p>
+      </div>
+      <div class="sol-card fi d3">
+        <div class="sol-icon">📊</div>
+        <div class="sol-title">إحصائيات التوظيف فالحين</div>
+        <p class="sol-desc">قيس الوقت والتكلفة لكل توظيف — محسّن كل موسم.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROCESSUS ══════ -->
+<section id="processus" class="sec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:8px">
+      <div class="tag"><span class="dot"></span> 4 خطوات بسيطة</div>
+    </div>
+    <h2 class="sec-title" style="text-align:center">وظف بذكاء في <em>4 خطوات</em></h2>
+    <p style="color:var(--muted);text-align:center;max-width:480px;margin:0 auto 56px;font-size:.95rem">
+      إلى كنتي كاتقول ما عندكش الوقت، هاد الحل كيوفر عليك حتى وقت الإيميل فالتوظيف.
+    </p>
+    <div class="proc-steps">
+      <div class="proc-line"></div>
+      <div class="proc-step fi">
+        <div class="proc-circle">📝</div>
+        <div class="proc-name">انشر الإعلان</div>
+        <p class="proc-desc">صف المنصب في 5 دقائق — على الإنترنت فوراً</p>
+      </div>
+      <div class="proc-step fi d1">
+        <div class="proc-circle">🤖</div>
+        <div class="proc-name">AI يفرز</div>
+        <p class="proc-desc">الذكاء الاصطناعي يحلل السير ويُرتّبها تلقائياً</p>
+      </div>
+      <div class="proc-step fi d2">
+        <div class="proc-circle">📋</div>
+        <div class="proc-name">قيّم وحاور</div>
+        <p class="proc-desc">تتبع التوظيف كامل: البايبلاين، الملاحظات، والمقابلات بلا تشتت</p>
+      </div>
+      <div class="proc-step fi d3">
+        <div class="proc-circle">🎉</div>
+        <div class="proc-name">وظّف</div>
+        <p class="proc-desc">أرسل عرض التوظيف مباشرة — فريقك جاهز</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PREUVE SOCIALE ══════ -->
+<section id="preuve" class="sec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:4px">
+      <div class="tag"><span class="dot"></span> المصداقية</div>
+    </div>
+    <h2 class="sec-title" style="text-align:center">+451 شركة<br><em style="direction:rtl;display:block">تثق في CoinCarrière</em></h2>
+    <div class="logos-wrap">
+      <div class="logos-track">
+        <div class="logo-chip">Menzeh Immo</div><div class="logo-chip">Atlas Realty</div>
+        <div class="logo-chip">Immogroup MA</div><div class="logo-chip">CasaImmo</div>
+        <div class="logo-chip">Maroc Invest</div><div class="logo-chip">Ryad Property</div>
+        <div class="logo-chip">Rabat Estates</div><div class="logo-chip">Fès Patrimoine</div>
+        <div class="logo-chip">Kenzi Résidences</div><div class="logo-chip">Souss Immo</div>
+        <div class="logo-chip">Menzeh Immo</div><div class="logo-chip">Atlas Realty</div>
+        <div class="logo-chip">Immogroup MA</div><div class="logo-chip">CasaImmo</div>
+        <div class="logo-chip">Maroc Invest</div><div class="logo-chip">Ryad Property</div>
+        <div class="logo-chip">Rabat Estates</div><div class="logo-chip">Fès Patrimoine</div>
+        <div class="logo-chip">Kenzi Résidences</div><div class="logo-chip">Souss Immo</div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box fi">
+        <span class="stat-n"><em>+</em><span class="ctr" data-t="1800">0</span></span>
+        <div class="stat-l">مرشحون عقار نشيطون</div>
+      </div>
+      <div class="stat-box fi d1">
+        <span class="stat-n"><span class="ctr" data-t="48">0</span><em>h</em></span>
+        <div class="stat-l">متوسط وقت التوظيف</div>
+      </div>
+      <div class="stat-box fi d2">
+        <span class="stat-n"><em>3×</em></span>
+        <div class="stat-l">أكثر كفاءات مؤهلة</div>
+      </div>
+      <div class="stat-box fi d3">
+        <span class="stat-n"><em>4.9</em></span>
+        <div class="stat-l" style="direction:rtl">تقييم مسؤولي HR</div>
+      </div>
+    </div>
+    <div class="testi fi">
+      <div class="testi-text">
+        «مع CoinCarrière، لم أعد أقضي أياماً في فرز السير. الذكاء الاصطناعي يعطيني المرشحين الجاهزين مباشرة — وظّفت وكيلاً متميزاً خلال 48 ساعة فقط.»
+      </div>
+      <div class="testi-auth">
+        <div class="testi-info">
+          <div class="testi-name">سناء بن حمو</div>
+          <div class="testi-role">مديرة الموارد البشرية — وكالة Atlas Realty، الدار البيضاء</div>
+        </div>
+        <div class="testi-ava">SB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section id="cta" class="sec">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-hook-ar">اكتشف كيفاش تخلي الذكاء الاصطناعي يخدم ليك من اليوم</div>
+      <h2 class="cta-title">توظيفك القادم<br>يبدأ من هنا</h2>
+      <p class="cta-sub">انشر أول إعلان عقاري في أقل من 5 دقائق. بلا كريدي كارد. بدون التزام.</p>
+      <div class="cta-btns">
+        <a href="https://coincarriere.com/register?type=company" target="_blank"
+           class="btn btn-sky" style="font-size:1.05rem;padding:17px 38px"
+           onclick="fbq('track','Lead')">
+          ابدأ مجاناً الآن →
+        </a>
+      </div>
+      <p class="cta-note">
+        <span>✓</span> مجاني للبدء &nbsp;·&nbsp;
+        <span>✓</span> على الإنترنت في 5 دقائق &nbsp;·&nbsp;
+        <span>✓</span> كفاءات مؤهلة في 48 ساعة
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span class="foot-logo">Coin<span>Carrière</span> — منصة التوظيف الذكي في العقار</span>
+    <p class="foot-note">© 2026 CoinCarrière · <a href="https://coincarriere.com" style="color:var(--muted)">coincarriere.com</a></p>
+  </div>
+</footer>
+
+<div class="sticky-mob">
+  <div class="sticky-txt">
+    <strong>ابدأ مجاناً اليوم</strong>
+    <span>كفاءات عقار مؤهلة في 48h</span>
+  </div>
+  <a href="https://coincarriere.com/register?type=company" target="_blank"
+     class="btn btn-sky" style="font-size:.85rem;padding:11px 20px"
+     onclick="fbq('track','Lead')">سجّل →</a>
+</div>
+
+<script>
+const fi=document.querySelectorAll('.fi');
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1});
+fi.forEach(f=>io.observe(f));
+
+const ctrs=document.querySelectorAll('.ctr');
+const cio=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target,t=+el.dataset.t,d=1600,s=t/(d/16);let c=0;const r=setInterval(()=>{c=Math.min(c+s,t);el.textContent=Math.floor(c).toLocaleString('fr-MA');if(c>=t)clearInterval(r)},16);cio.unobserve(el)})},{threshold:.5});
+ctrs.forEach(c=>cio.observe(c));
+
+const sticky=document.querySelector('.sticky-mob');
+const footer=document.querySelector('footer');
+new IntersectionObserver(e=>{e.forEach(x=>{sticky.style.display=x.isIntersecting?'none':''})},{threshold:.1}).observe(footer);
+</script>
+</body>
+</html>
