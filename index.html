@@ -225,8 +225,8 @@ footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
     </a>
     <div class="nav-r">
       <span class="nav-note">منصة التوظيف الذكي في العقار</span>
-      <a href="https://coincarriere.com/register?type=company" target="_blank"
-         class="btn btn-sky" onclick="fbq('track','Lead')">
+      <a href="https://coincarriere.com/register?type=company" target="_blank" rel="noopener noreferrer"
+         class="btn btn-sky" onclick="trackLead()">
         ابدأ مجاناً →
       </a>
     </div>
@@ -257,8 +257,8 @@ footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
           ركّز غير على إغلاق الصفقات — وحنا نوفروا لك أفضل المرشحين المعتمدين.
         </p>
         <div class="hero-actions">
-          <a href="https://coincarriere.com/register?type=company" target="_blank"
-             class="btn btn-sky" onclick="fbq('track','Lead')">
+          <a href="https://coincarriere.com/register?type=company" target="_blank" rel="noopener noreferrer"
+             class="btn btn-sky" onclick="trackLead()">
             اكتشف الحل المجاني →
           </a>
           <a href="#solution" class="btn btn-ghost">Voir comment ça marche</a>
@@ -506,9 +506,9 @@ footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
       <h2 class="cta-title">توظيفك القادم<br>يبدأ من هنا</h2>
       <p class="cta-sub">انشر أول إعلان عقاري في أقل من 5 دقائق. بلا كريدي كارد. بدون التزام.</p>
       <div class="cta-btns">
-        <a href="https://coincarriere.com/register?type=company" target="_blank"
+        <a href="https://coincarriere.com/register?type=company" target="_blank" rel="noopener noreferrer"
            class="btn btn-sky" style="font-size:1.05rem;padding:17px 38px"
-           onclick="fbq('track','Lead')">
+           onclick="trackLead()">
           ابدأ مجاناً الآن →
         </a>
       </div>
@@ -524,7 +524,7 @@ footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
 <footer>
   <div class="container">
     <span class="foot-logo">Coin<span>Carrière</span> — منصة التوظيف الذكي في العقار</span>
-    <p class="foot-note">© 2026 CoinCarrière · <a href="https://coincarriere.com" style="color:var(--muted)">coincarriere.com</a></p>
+    <p class="foot-note">© 2026 CoinCarrière · <a href="https://coincarriere.com" target="_blank" rel="noopener noreferrer" style="color:var(--muted)">coincarriere.com</a></p>
   </div>
 </footer>
 
@@ -533,12 +533,19 @@ footer{padding:28px 0;border-top:1px solid var(--border);text-align:center}
     <strong>ابدأ مجاناً اليوم</strong>
     <span>كفاءات عقار مؤهلة في 48h</span>
   </div>
-  <a href="https://coincarriere.com/register?type=company" target="_blank"
+  <a href="https://coincarriere.com/register?type=company" target="_blank" rel="noopener noreferrer"
      class="btn btn-sky" style="font-size:.85rem;padding:11px 20px"
-     onclick="fbq('track','Lead')">سجّل →</a>
+     onclick="trackLead()">سجّل →</a>
 </div>
 
 <script>
+
+function trackLead(){
+  if (typeof window.fbq === 'function') {
+    window.fbq('track','Lead');
+  }
+}
+
 const fi=document.querySelectorAll('.fi');
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1});
 fi.forEach(f=>io.observe(f));
@@ -549,7 +556,7 @@ ctrs.forEach(c=>cio.observe(c));
 
 const sticky=document.querySelector('.sticky-mob');
 const footer=document.querySelector('footer');
-new IntersectionObserver(e=>{e.forEach(x=>{sticky.style.display=x.isIntersecting?'none':''})},{threshold:.1}).observe(footer);
+new IntersectionObserver(e=>{e.forEach(x=>{sticky.style.display=x.isIntersecting?'none':'flex'})},{threshold:.1}).observe(footer);
 </script>
 </body>
 </html>
